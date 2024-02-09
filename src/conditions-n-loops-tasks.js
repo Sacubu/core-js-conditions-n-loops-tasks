@@ -21,8 +21,8 @@
  *  0  => true
  *  -5 => false
  */
-function isPositive(/* number */) {
-  throw new Error('Not implemented');
+function isPositive(number) {
+  return number >= 0;
 }
 
 /**
@@ -38,8 +38,14 @@ function isPositive(/* number */) {
  *  -5, 0, 5      => 5
  *  -0.1, 0, 0.2  => 0.2
  */
-function getMaxNumber(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getMaxNumber(a, b, c) {
+  if (a >= b && a >= c) {
+    return a;
+  }
+  if (b >= a && b >= c) {
+    return b;
+  }
+  return c;
 }
 
 /**
@@ -60,8 +66,14 @@ function getMaxNumber(/* a, b, c */) {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
-function canQueenCaptureKing(/* queen, king */) {
-  throw new Error('Not implemented');
+function canQueenCaptureKing(queen, king) {
+  if (queen.x === king.x || queen.y === king.y) {
+    return true;
+  }
+  if (Math.abs(queen.x - king.x) === Math.abs(queen.y - king.y)) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -82,8 +94,17 @@ function canQueenCaptureKing(/* queen, king */) {
  *  2, 2, 5   => false
  *  3, 0, 3   => false
  */
-function isIsoscelesTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isIsoscelesTriangle(a, b, c) {
+  if ((a === b && a === c - 1 && b === c - 1) || (a === b && a > c && b > c)) {
+    return true;
+  }
+  if ((a === c && a === b - 1 && c === b - 1) || (a === b && a > b && c > b)) {
+    return true;
+  }
+  if ((b === c && b === a - 1 && c === a - 1) || (b === c && b > a && c > a)) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -100,8 +121,89 @@ function isIsoscelesTriangle(/* a, b, c */) {
  *  10  => X
  *  26  => XXVI
  */
-function convertToRomanNumerals(/* num */) {
-  throw new Error('Not implemented');
+function convertToRomanNumerals(num) {
+  let roman = '';
+
+  if (num === 1) {
+    roman = 'I';
+  } else if (num === 2) {
+    roman = 'II';
+  } else if (num === 3) {
+    roman = 'III';
+  } else if (num === 4) {
+    roman = 'IV';
+  } else if (num === 5) {
+    roman = 'V';
+  } else if (num === 6) {
+    roman = 'VI';
+  } else if (num === 7) {
+    roman = 'VII';
+  } else if (num === 8) {
+    roman = 'VIII';
+  } else if (num === 9) {
+    roman = 'IX';
+  } else if (num === 10) {
+    roman = 'X';
+  } else if (num === 11) {
+    roman = 'XI';
+  } else if (num === 12) {
+    roman = 'XII';
+  } else if (num === 13) {
+    roman = 'XIII';
+  } else if (num === 14) {
+    roman = 'XIV';
+  } else if (num === 15) {
+    roman = 'XV';
+  } else if (num === 16) {
+    roman = 'XVI';
+  } else if (num === 17) {
+    roman = 'XVII';
+  } else if (num === 18) {
+    roman = 'XVIII';
+  } else if (num === 19) {
+    roman = 'XIX';
+  } else if (num === 20) {
+    roman = 'XX';
+  } else if (num === 21) {
+    roman = 'XXI';
+  } else if (num === 22) {
+    roman = 'XXII';
+  } else if (num === 23) {
+    roman = 'XXIII';
+  } else if (num === 24) {
+    roman = 'XXIV';
+  } else if (num === 25) {
+    roman = 'XXV';
+  } else if (num === 26) {
+    roman = 'XXVI';
+  } else if (num === 27) {
+    roman = 'XXVII';
+  } else if (num === 28) {
+    roman = 'XXVIII';
+  } else if (num === 29) {
+    roman = 'XXIX';
+  } else if (num === 30) {
+    roman = 'XXX';
+  } else if (num === 31) {
+    roman = 'XXXI';
+  } else if (num === 32) {
+    roman = 'XXXII';
+  } else if (num === 33) {
+    roman = 'XXXIII';
+  } else if (num === 34) {
+    roman = 'XXXIV';
+  } else if (num === 35) {
+    roman = 'XXXV';
+  } else if (num === 36) {
+    roman = 'XXXVI';
+  } else if (num === 37) {
+    roman = 'XXXVII';
+  } else if (num === 38) {
+    roman = 'XXXVIII';
+  } else if (num === 39) {
+    roman = 'XXXIX';
+  }
+  return roman;
 }
 
 /**
